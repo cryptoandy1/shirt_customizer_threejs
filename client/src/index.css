@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  html {
+    font-family: 'Ubuntu', sans-serif;
+    letter-spacing: 0.06rem;
+  }
+
+  .app {
+    @apply flex relative w-full h-screen overflow-hidden;
+  }
+
+  .home {
+    @apply w-fit h-full flex absolute z-[5] top-[22%];
+  }
+
+  .home-content {
+    @apply flex flex-col h-[70%] gap-[0.4rem] px-6 justify-between xl:px-36 landsc:grid landsc:grid-cols-2;
+  }
+
+  .head-text {
+    @apply flex-initial text-[2.5rem] italic xs:text-[4rem] sm:text-[6rem] mdh:text-[9rem] font-semibold landsc:text-[2.9rem];
+  }
+
+  .home-p {
+    @apply flex flex-initial glassmorphism max-w-md p-3 rounded-lg;
+  }
+
+  .text-and-button {
+    @apply flex flex-col gap-[0.4rem] md:text-[1rem] mdh:text-[1.3rem] landsc-xs:text-[0.75rem];
+  }
+
+  .download-btn {
+    @apply w-14 h-14 flex justify-center items-center rounded-full glassmorphism cursor-pointer outline-none;
+  }
+
+  .editortabs-container {
+    @apply glassmorphism w-16 border-[2px] rounded-lg flex flex-col justify-center items-center ml-1 py-4 gap-4 landsc:gap-0;
+  }
+
+  .filtertabs-container {
+    @apply absolute z-10 bottom-5 right-0 left-0 w-full flex justify-center items-center flex-wrap gap-4;
+  }
+
+  .col-pic {
+    @apply absolute ml-3 left-[37px] xs:left-full;
+  }
+
+  .aipicker-container {
+    @apply absolute left-full ml-3 glassmorphism p-3 w-[195px] h-[220px] rounded-md flex flex-col gap-4;
+  }
+
+  .aipicker-textarea {
+    @apply w-full bg-transparent text-sm border border-gray-300 p-2 outline-none flex-1;
+  }
+
+  .filepicker-container {
+    @apply absolute left-full ml-3 glassmorphism p-3 w-[195px] h-[220px] flex flex-col rounded-md;
+  }
+
+  .filepicker-label {
+    @apply border border-gray-300 py-1.5 px-2 rounded-md shadow-sm text-xs text-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 cursor-pointer w-fit;
+  }
+
+  .tab-btn {
+    @apply w-14 h-14 flex justify-center items-center cursor-pointer select-none;
+  }
+
+  .glassmorphism {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 2px 30px 0 rgba(31, 38, 135, 0.07);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  input[type='file'] {
+    z-index: -1;
+    position: absolute;
+    opacity: 0;
+  }
+
+  .sketch-picker {
+    width: 170px !important;
+    background: rgba(255, 255, 255, 0.25) !important;
+    box-shadow: 0 2px 30px 0 rgba(31, 38, 135, 0.07) !important;
+    backdrop-filter: blur(4px) !important;
+    -webkit-backdrop-filter: blur(4px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    border-radius: 6px !important;
+  }
+
+  .sketch-picker > div:nth-child(3) {
+    display: none !important;
+  }
+
+  ul {
+    font-size: inherit;
+    list-style: disc;
+    padding: 1rem;
+  }
+
+  .motion-header {
+    @apply absolute flex justify-between w-full z-20 p-3 xl:px-36 sm:p-3;
+  }
+  div h2 {
+    @apply flex cursor-pointer items-center font-bold;
+  }
+
+  .cart-button {
+    @apply absolute z-30;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .cart-span {
+    @apply absolute z-10 xl:py-8 xl:px-36 sm:p-8 p-6;
+    /* max-xl:gap-7; */
+    font-size: 0.7rem;
+    font-weight: bold;
+    /* display: flex; */
+    border-radius: 50%;
+    background-color: #f00;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 2px 8px;
+    top: 0%;
+    right: -20%;
+  }
+
+  .cart {
+    @apply flex flex-col h-[85%] right-0 top-[15%] px-[1rem] py-[2rem] overflow-y-auto absolute z-20 text-[0.5rem] xs:text-[1rem] sm:w-[80%] md:w-[60%];
+  }
+
+  .cart-item {
+    @apply grid grid-cols-4 gap-[1rem] py-5 items-center;
+  }
+  /* flex flex-row flex-nowrap items-center justify-between  */
+  .num-counter {
+    @apply flex items-center justify-between;
+  }
+
+  .counter-button {
+    @apply border-[0.1px] border-solid border-black w-[33%] mx-[0.1rem]
+    /* width: 2rem;
+    height: 2rem; */
+    /* border: solid 0.1px #000;
+    margin: 0 0.5rem; */;
+  }
+
+  .total-cart {
+    @apply py-5 px-3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .checkout-button {
+    @apply glassmorphism py-3 px-5 rounded-lg;
+  }
+
+  .save-image-container {
+    @apply absolute z-10 right-0 bottom-20 w-full flex justify-center;
+    /* bottom: 95px; */
+    /* right: 37%; */
+    left: 6%;
+    height: auto;
+    font-weight: 600;
+  }
+
+  .save-image-content {
+    @apply glassmorphism p-4;
+    display: flex;
+    position: relative;
+    column-gap: 1rem;
+  }
+
+  .save-png-options {
+    @apply rounded-lg p-2;
+    cursor: pointer;
+  }
+
+  .save-png-options:hover {
+    @apply shadow-sm;
+    background-color: antiquewhite;
+  }
+
+  /* Tooltip container */
+  .filter-tooltip-container,
+  .editor-tooltip-container {
+    position: relative;
+    display: flex;
+  }
+
+  /* Tooltip text */
+  .editor-tooltip-container .tooltip {
+    display: flex;
+    position: absolute;
+    top: 0%;
+    left: 70%;
+    transform: translateX(-75%);
+    transform: translateY(-110%);
+    background-color: rgba(51, 51, 51, 0.75);
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: opacity 0.3s, visibility 0.3s;
+    width: auto;
+    z-index: 1;
+  }
+
+  .editor-tooltip-container .tooltip.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+  /* Tooltip text */
+  .filter-tooltip-container .tooltip {
+    display: flex;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    transform: translateX(-75%);
+    transform: translateY(-110%);
+    background-color: rgba(51, 51, 51, 0.75);
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: opacity 0.3s, visibility 0.3s;
+    width: auto;
+    z-index: 1;
+  }
+
+  .filter-tooltip-container .tooltip.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
